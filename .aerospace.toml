@@ -82,6 +82,7 @@ ctrl-alt-cmd-shift-enter = 'exec-and-forget open -n /Applications/iTerm.app'
 ctrl-alt-cmd-shift-b = 'exec-and-forget open -n /Applications/Google\ Chrome.app'
 ctrl-alt-cmd-shift-c = 'exec-and-forget open -n /Applications/Zed.app'
 ctrl-alt-cmd-shift-s = 'exec-and-forget open -n /Applications/Slack.app'
+ctrl-alt-cmd-shift-v = 'exec-and-forget open -n /Visual\ Studio\ Code.app'
 
 # All possible keys:
 # - Letters.        a, b, c, ..., z
