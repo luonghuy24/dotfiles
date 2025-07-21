@@ -7,6 +7,7 @@ BAR_COLOR=0xff24283b
 ACCENT_COLOR=0xff7aa2f7
 CONFIG_DIR="$HOME/.config/sketchybar"
 PLUGIN_DIR="$CONFIG_DIR/plugins"
+ITEM_DIR="$CONFIG_DIR/items"
 
 ##### Bar Appearance #####
 # Configuring the general appearance of the bar.
@@ -36,33 +37,9 @@ sketchybar --default "${default[@]}"
 
 sketchybar --add event aerospace_workspace_change
 
-for sid in $(aerospace list-workspaces --all); do
-    sketchybar --add item space.$sid left \
-        --subscribe space.$sid aerospace_workspace_change \
-        --set space.$sid \
-        background.color=0x44ffffff \
-        background.corner_radius=5 \
-        background.height=26 \
-        background.drawing=off \
-        label="$sid" \
-        label.font="sketchybar-app-font:Regular:16.0" \
-        label.padding_right=20 \
-        label.y_offset=-1 \
-        click_script="aerospace workspace $sid" \
-        script="$CONFIG_DIR/plugins/aerospace.sh $sid"
-done
-
 ##### Adding Left Items #####
-# We add some regular items to the left side of the bar, where
-# only the properties deviating from the current defaults need to be set
-
-sketchybar --add item front_app left \
-           --set front_app       background.color=0x44ffffff \
-                                 icon.color=0xffffffff \
-                                 icon.font="sketchybar-app-font:Regular:16.0" \
-                                 label.color=0xffffffff \
-                                 script="$PLUGIN_DIR/front_app.sh"            \
-           --subscribe front_app front_app_switched
+source $ITEM_DIR/spaces.sh
+source $ITEM_DIR/front_app.sh
 
 ##### Force all scripts to run the first time (never do this in a script) #####
 sketchybar --update

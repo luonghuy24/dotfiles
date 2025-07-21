@@ -1,8 +1,13 @@
 #!/bin/bash
 source "$HOME/.config/sketchybar/plugins/icon_map_fn.sh"
 
+# Get the currently focused workspace if FOCUSED_WORKSPACE is not set
+if [ -z "$FOCUSED_WORKSPACE" ]; then
+  FOCUSED_WORKSPACE=$(aerospace list-workspaces --focused)
+fi
+
 # Always build the label with workspace number and app icons
-icon_strip="$1 "
+icon_strip="$1:"
 apps=$(aerospace list-windows --workspace "$1" --format '%{app-name}')
 if [ -n "$apps" ]; then
   while IFS= read -r app; do
@@ -26,7 +31,6 @@ else
   sketchybar --set "$NAME" \
     label="$icon_strip" \
     background.color=0x44FFFFFF \
-    background.border_color=0xffffffff \
     background.border_color=0xff003547 \
-    background.drawing=on
+    background.drawing=off
 fi
