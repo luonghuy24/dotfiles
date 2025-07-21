@@ -83,6 +83,8 @@ plugins=(
     zsh-completions
     zsh-autosuggestions
     fzf-tab
+    zsh-bat
+    you-should-use
 )
 
 # Load completions
@@ -119,7 +121,6 @@ source $ZSH/oh-my-zsh.sh
 alias zshconfig="zed ~/.zshrc"
 alias ohmyzsh="zed ~/.oh-my-zsh"
 alias ls='ls --color'
-alias cd='z'
 
 eval "$(mise activate zsh)"
 export PATH="/opt/homebrew/opt/postgresql@17/bin:$PATH"
@@ -163,4 +164,5 @@ export PATH="/opt/homebrew/opt/postgresql@17/bin:$PATH"
 # Set up fzf key bindings and fuzzy completion
 source <(fzf --zsh)
 
-eval "$(zoxide init zsh)"
+eval "$(zoxide init --cmd cd zsh)"
+eval "$(thefuck --alias)"
