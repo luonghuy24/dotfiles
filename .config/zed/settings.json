@@ -15,6 +15,15 @@
     "dark": "Catppuccin Frappé"
   },
   "terminal": {
-    "font_family": "MesloLGS NF"
+    "max_scroll_history_lines": 10000,
+    "font_family": "MesloLGS NF",
+    "copy_on_select": true,
+    "keep_selection_on_copy": true,
+    "blinking": "off",
+    "toolbar": {
+      "breadcrumbs": false
+    },
+    "working_directory": "current_project_directory",
+    "button": true
   }
 }
