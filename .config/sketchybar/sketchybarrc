@@ -3,8 +3,26 @@
 # For a (much) more advanced configuration example see my dotfiles:
 # https://github.com/FelixKratz/dotfiles
 
-BAR_COLOR=0xff24283b
-ACCENT_COLOR=0xff7aa2f7
+# Catppuccin Mocha colors
+BAR_COLOR=0xff1e1e2e
+ACCENT_COLOR=0xffcba6f7
+TEXT_COLOR=0xffcdd6f4
+SURFACE_COLOR=0xff313244
+OVERLAY_COLOR=0xff6c7086
+LAVENDER=0xffb4befe
+BLUE=0xff89b4fa
+SAPPHIRE=0xff74c7ec
+SKY=0xff89dceb
+TEAL=0xff94e2d5
+GREEN=0xffa6e3a1
+YELLOW=0xfff9e2af
+PEACH=0xfffab387
+MAROON=0xffeba0ac
+RED=0xfff38ba8
+MAUVE=0xffcba6f7
+PINK=0xfff5c2e7
+FLAMINGO=0xfff2cdcd
+ROSEWATER=0xfff5e0dc
 CONFIG_DIR="$HOME/.config/sketchybar"
 PLUGIN_DIR="$CONFIG_DIR/plugins"
 ITEM_DIR="$CONFIG_DIR/items"
@@ -16,7 +34,7 @@ ITEM_DIR="$CONFIG_DIR/items"
 # If you are looking for other colors, see the color picker:
 # https://felixkratz.github.io/SketchyBar/config/tricks#color-picker
 
-sketchybar --bar position=bottom height=40 blur_radius=30 color=0x40000000
+sketchybar --bar position=bottom height=40 blur_radius=30 color=$BAR_COLOR
 
 ##### Changing Defaults #####
 # We now change some default values, which are applied to all further items.
@@ -26,8 +44,8 @@ sketchybar --bar position=bottom height=40 blur_radius=30 color=0x40000000
 default=(
   padding_left=5
   padding_right=5
-  icon.color=0xffffffff
-  label.color=0xffffffff
+  icon.color=$TEXT_COLOR
+  label.color=$TEXT_COLOR
   icon.padding_left=4
   icon.padding_right=4
   label.padding_left=4
